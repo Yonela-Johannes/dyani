@@ -1,5 +1,3 @@
-const left = document.querySelector('.arrow_left')
-const right = document.querySelector('.arrow_right')
 const slider = document.querySelector('.slider')
 const images = document.querySelectorAll(".slider-image")
 
@@ -28,6 +26,3 @@ setInterval(() => {
     slideNum < len ? nextSlide() : firstSlide()
     console.log('dispatch ====>>>>>>>>')
 }, 3000);
-
-right.addEventListener('click', () => { slideNum < len ? nextSlide() : firstSlide() });
-left.addEventListener('click', () => { slideNum > 1 ? prevSlide() : lastSlide() } )
