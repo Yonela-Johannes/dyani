@@ -1,0 +1,33 @@
+<div class="welcome_main_containers">
+    <div class="product">
+        <p class="message">{{message}}</p>
+        <form action="/api/checkout/bank/{{name}}" method="post">
+            <p class="title">Banking Details</p>
+            <div class="description_container">
+                <div class="welcome_container">
+                    <img src="/img/paypal.png" alt="" class="welcome_image" />
+                </div>
+                <div class="name_container">
+                    <div>
+                        <p class="details_label">Card Number</p>
+                        <input class="name_input" name="card_number" value="" type="number"
+                            placeholder="Please enter card number" />
+                    </div>
+                    <div>
+                        <p class="details_label">Valid Thru</p>
+                        <input class="name_input" name="valid_thru" value="" type="date" />
+                    </div>
+                    <div>
+                        <p class="details_label">CVV/CVC</p>
+                        <input class="name_input" name="cvv" value="" type="number"
+                            placeholder="Please enter you cvv/cvc" />
+                    </div>
+                </div>
+            </div>
+            <button class='confirm_button' type="submit">Next</button>
+    </div>
+</div>
+</form>
+<div class="welcome_image_container_two">
+    <img src="/img/paypalTwo.png" alt="" class="welcome_image_two" />
+</div>

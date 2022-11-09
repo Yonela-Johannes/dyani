@@ -1,0 +1,48 @@
+<div class="product border">
+    <div class="product-head">
+                <p class="title">Your Payment Details</p>
+        <img src="/img/infoone.png" alt="" class="payment_image" />
+    </div>
+    <table class="payment">
+        {{#user}}
+        <tr>
+            <th>Name</th>
+            <th>Last Name</th>
+            <th>Phone Nr.</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>{{name}}</td>
+            <td>{{lastname}}</td>
+            <td>{{phone}}</td>
+            <td>{{email}}</td>
+        </tr>
+        {{/user}}
+        {{#address}}
+        <tr>
+            <th>Street</th>
+            <th>City/Town</th>
+            <th>Code</th>
+        <tr>
+        </tr>
+            <td>{{street}}</td>
+            <td>{{city}}</td>
+            <td>{{code}}</td>
+        </tr>
+        {{/address}}
+        {{#bank}}
+        <tr>
+            <th>Card Number</th>
+            <th>Date</th>
+            <th>Cvv</th>
+        </tr>
+        <tr>
+            <td>{{card_number}}</td>
+            <td>{{dateFormat date}}</td>
+            <td>{{cvv}}</td>
+        </tr>
+        {{/bank}}
+</div>
+<div class="welcome_image_container_two">
+    <img src="/img/info.png" alt="" class="welcome_image_two" />
+</div>

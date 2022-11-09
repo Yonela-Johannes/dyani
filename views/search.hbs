@@ -1,0 +1,28 @@
+<div class="main-search-container">
+    <div class="product">
+        <div class="product-container">
+            {{#each allShoes}}
+                    <div class="card">
+                        <a href="/shoe/{{id}}">
+                            <img class="product-image" src="data:text/html;base64,{{image}}" alt="product" />
+                            <div class="description">
+                                <div class="details">
+                                    <div class="card-header">
+                                        <p class='name'>{{this.name}}</p>
+                                        <p class="brand">{{brand}}</p>
+                                    </div>
+                                </div>
+                                <div class="prices">
+                                    <div class="price-content">
+                                        <p class="now">Now:</p>
+                                        <p class="price">R {{price}}</p>
+                                    </div>
+                                </div>
+                                <p class="stock">{{inStock in_stock}}</p>
+                            </div>
+                        </a>
+                    </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

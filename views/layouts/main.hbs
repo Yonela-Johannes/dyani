@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dyani</title>
+    <link rel="shortcut icon" href="/img/lmogo.jpg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="header">
+            <a title="Dyani" href="{{homeRoute}}">
+                <div class="header-container">
+                    <img src="/img/lmogo.jpg" class="logo-image" alt="logo" />
+                    <h1 class="logo">dyani</h1>
+                </div>
+            </a>
+            <div title="Back To Shop" class="nav {{adminNavState}}">
+                <a href="/">
+                    <div class="nav_item">
+                        <img src="/img/addshoe.png" alt="" class="header_image" />
+                        <p class="shop">Shop</p>
+                    </div>
+                </a>
+            </div>
+            <div class="nav {{navState}}">
+                <a href="/">
+                    <div class="nav_item">
+                        <img title="home" src="/img/home.png" alt="" class="header_image" />
+                    </div>
+                </a>                
+                <a href="/shop">
+                    <div class="nav_item">
+                        <img title="shop" src="/img/shop.png" alt="" class="header_image" />
+                    </div>
+                </a>
+                <a title="Go to Shoping Cart" href="/cart">
+                    <div class="nav_item">
+                        <div class="shopping_cart">
+                            <img title="cart" src="/img/cart.png" alt="" class="header_image" />
+                            <p class="cart-num">{{cartLength}}</p>
+                        </div>
+                    </div>
+                </a>
+                </p>
+                <a title="Customer" href="{{userCredState}}" class="{{userCred}}">
+                    <div class="nav_item">
+                        <p class="userCred">{{userCred}}</p>
+                    </div>
+                </a>
+                <form action="/logout" method="post">
+                    <button class="signout {{routeState}}" type="submit" title="logout">
+                        <div class="nav_item">
+                            <p class="userCred">Sign out</p>
+                        </div>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="container">
+            {{{body}}}
+        </div>
+    </div>
+      <div class='footer'>
+        <div>
+          <p class="footer__header">Need Help?</p>
+            <div title="CodeX Website" class="footer-content">
+                <a href="https://www.projectcodex.co/" target="_blank">
+                    <p>Learn CodeX</p>
+                </a>
+            </div>
+            <div title="CodeX Github" class="footer-content">
+                <a href="https://github.com/codex-academy" target="_blank">
+                    <p>CodeX-Academy</p>                    
+                </a>
+            </div>
+            <div title="Codex Instagram" class="footer-content">
+                <a href="https://www.instagram.com/projectcodex/" target="_blank">
+                    <p>Instagram</p>                    
+                </a>
+            </div>
+          <p>Help Center</p>
+          <p>Track Your Order</p>
+          <p>Corporate & Bulk Purchasing</p>
+          <p>Returns & Refunds</p>
+          <p class="sub__footer">&copy; Copyright 2022, Dyani</p>
+        </div>
+        <div>
+          <p class="footer__header">Stay in touch</p>
+            <p>Yonela Johannes</p>
+            <p>Full-Stack Web-Developer</p>
+            <p>Location: South Africa, Western Cape, 7100</p>
+            
+            <p class="sub__footer">Phone: 069 356 4159</p>
+            <p class="sub__footer">johannesyonela@gmail.com</p>
+            <div title="Yonela Johannes Github" class="footer-content">
+                <a href="https://github.com/Yonela-Johannes/" target="_blank">
+                    <p>GitHub</p>                    
+                </a>
+            </div>
+            <div title="Yonela Johannes Instagram" class="footer-content">
+                <a href="https://www.instagram.com/therealtaalpha/" target="_blank">
+                    <p>Instagram</p>                   
+                </a>
+            </div>
+            <div title="Codex Academy Challenge" class="footer-content">
+                <a href="https://github.com/codex-academy/BasicExpressWebApp/tree/master/routes" target="_blank">
+                    <p>Eccomerce Challenge 2022</p>
+                </a>
+            </div>
+        </div>
+        <div>
+          <p class="footer__header">NewsLetter</p>
+          <p>Careers</p>
+          <p>Our Stores</p>
+          <p class="sub__footer">Terms & Conditions</p>
+        </div>
+      </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"
+        integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="/main.js" type="module"></script>
+</body>
+
+</html>

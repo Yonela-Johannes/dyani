@@ -1,0 +1,66 @@
+<div class="main-search-container">
+    <div class="product border">
+        <div class="product-head">
+            <p class="title">{{name}} {{lastname}} Payment Overview</p>
+        </div>
+        <div class="top-container">
+            <p class="title">Total</p>
+            <canvas id="myChartTwo" width="400" height="200"></canvas>
+        </div>
+    </div>
+    <div class="product border">
+            {{#user}}
+        <div class="product-head">
+                    <p class="title">{{name}} {{lastname}} Payment Details</p>
+        </div>
+        <table class="payment">
+            <tr>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>Phone Nr.</th>
+                <th>Email</th>
+            </tr>
+            <tr>
+                <td>{{name}}</td>
+                <td>{{lastname}}</td>
+                <td>{{phone}}</td>
+                <td>{{email}}</td>
+            </tr>
+            {{/user}}
+    </div>
+
+    <div class="welcome_image_container_two">
+        <img src="/img/info.png" alt="" class="welcome_image_two" />
+        <tr>
+            <th>Shoe Id</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Gender</th>
+            <th>Price</th>
+            <th>Total Shoe/s</th>
+            <th>Purchase date</th>
+            <th>Shoe Image</th>
+        </tr>
+        {{#each cartResults}}
+        {{#each .}}
+            <tr>
+                <td>{{id}}</td>
+                <td class="name">{{name}}</td>
+                <td class="brand">{{brand}}</td>
+                <td class="gender">{{gender}}</td>
+                <td class="price">{{price}}</td>
+                <td><p class="amount">{{buying_amount}}</p></td>
+                <td class="date">{{dateFormatTwo payment_date}}</td>
+                <td>
+                    <img class="stock_shoe" src="data:text/html;base64,{{image}}" alt="shoe" />
+                </td>
+            </tr>
+        {{/each}}
+        {{/each}}
+        </table>
+    </div>
+    <div class="welcome_image_container_two">
+        <img src="/img/info.png" alt="" class="welcome_image_two" />
+    </div>
+</div>
+<script src="/chartTwo.js" type="module"></script>

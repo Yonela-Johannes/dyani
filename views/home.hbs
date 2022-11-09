@@ -1,0 +1,65 @@
+<div class="main-search-container">
+    <div class="product">
+        <p class="title">Items</p>
+        <p class="message">{{message}}</p>
+        <p class="displayMessage {{con}}">{{displayMessage}}</p>
+        <div class="product-container">
+            {{#each allShoes}}
+            <div title={{brand}} class="card">
+                <form action="/add-to-cart/{{id}}" method="post">
+                    <img class="product-image" src="data:text/html;base64,{{image}}" alt="product" />
+                    <div class="description">
+                        <div class="price-content">
+                            <p class="brand_title">name</p>
+                            <p class='name'>{{name}}</p>
+                        </div>
+                        <div class="price-content">
+                            <p class="brand_title">brand</p>
+                            <p class="brand">{{brand}}</p>
+                        </div>
+                            <div class="price-content cost">
+                                <p class="brand_title">Cost</p>
+                                <p class="price"> R{{price}}</p>
+                            </div>
+                        <div class="add-to-cart">
+                            <button class="cart-button add">
+                                <img src="/img/addToCart.png" alt="" class="welcome_image" />
+                            </button>
+                            <a  href='/shoe/{{id}}' class="view">
+                                <img src="/img/eye.png" alt="" class="welcome_image" />
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            {{/each}}
+        </div>
+        <div class="inner-container">
+            <form action="/shoes/search" method="post">
+                <p class="title">Search Shoes</p>
+                    <div class="description_container">
+                        <div>
+                        <div class="inner-content">
+                            <select name="brand">
+                                <option disabled selected hidden value="">Select Brand</option>
+                                {{#each brands}}
+                                <option value="{{this}}">{{this}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="inner-content">
+                            <select name="size">
+                                <option disabled selected hidden value="">Select Size</option>
+                                {{#each sizes}}
+                                    <option name="gender" value={{this}}>{{this}}</option>
+                                {{/each}}
+                            </select>
+                        </div>                          
+                    <button type="submit">Search</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="./slider.js" type="module"></script>

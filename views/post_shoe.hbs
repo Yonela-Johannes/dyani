@@ -1,0 +1,68 @@
+<div class="main-search-container">
+    <div class="product">
+        <p class="title">Add New Shoe</p>
+        <div class="add_containers">
+            <div class="welcome">
+                <form action="/admin/add-shoe" method="post">
+                    <div class="description_container">
+                        <div class="name_container">
+                            <div>
+                                <p class="details_label">Name</p>
+                                <input autofocus name='shoe_name' type="text" placeholder="Enter shoe name...">
+                            </div>
+                            <div>
+                                <p class="details_label">Brand</p>
+                                <input name="shoe_brand" type="text" placeholder="Enter shoe brand...">
+                            </div>
+                            <div>
+                                <p class="details_label">Price</p>
+                                <input name="shoe_price" type="number" step={0.5} placeholder="Enter shoe price..." min='1'>
+                            </div>
+                            <div>
+                                <p class="details_label">Previous Price</p>
+                                <input name="shoe_old_price" type="number" step={0.5} placeholder='Enter shoe old price..'
+                                    min='1'>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="welcome">
+                <div class="description_container">
+                    <div class="name_container">
+                        <div>
+                            <p class="details_label">Gender</p>
+                            <select name="gender">
+                                <option disabled selected hidden value="">Select Gender</option>
+                                <option name="gender" value="male">Male</option>
+                                <option name="gender" value="female">Female</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select name="colors">
+                                <option disabled selected hidden value="">Select color</option>
+                                <option name="color" value="white">White</option>
+                                <option name="color" value="black">Black</option>
+                                <option name="color" value="brown">Brown</option>
+                            </select>
+                        </div>
+                        <div>
+                            <p class="details_label">Quantity</p>
+                            <input name="shoe_in_stock" type="number" step={0.5}
+                                placeholder='Enter shoe quantity in stock..' min='1'>
+                        </div>
+                        <div>
+                            <p class="details_label">Size</p>
+                            <input name="shoe_size" placeholder='Enter shoe size..' type="number" min='1'>
+                        </div>
+                        <div class="input_container">
+                            <p class="details_label">Image</p>
+                            <input name="shoe_image" placeholder='Enter shoe size..' type="file" />
+                        </div>
+                    </div>
+                </div>
+                <button class='confirm_button' type="submit">Add Shoe</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

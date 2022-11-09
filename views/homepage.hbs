@@ -1,0 +1,61 @@
+<div class="main-search-container">
+    <div class="product">
+      <div class='landing'>
+        <div class="main__landing">
+          <div class="left">
+            <p class="subtitle">
+              Buy Now Online
+            </p>
+            <p class="landing__title">
+              <div class="header-container">
+                    <img src="/img/lmogo.jpg" class="logo-image" alt="logo" />
+                    <h1 class="logo">dyani</h1>
+                </div></p>
+            <div>
+            </div>
+            <div class='deliveryContainer'>
+              <div class='delivery'>
+                <div>
+                  <p class="delTitle">Free delivery</p>
+                  <p>No Delivery charge</p>
+                </div>
+              </div>
+              <div class='delivery'>
+                <div>
+                  <p class="delTitle">Free Returns</p>
+                  <p>100% pickup and return policy.</p>
+                </div>
+              </div>
+              <div class='delivery'>
+                <div>
+                  <p class="delTitle">Secure Payments</p>
+                  <p>We accept major credit cards.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <img src='./img/landing.jpg' alt="" class="landing__image" />
+          </div>
+        </div>
+    </div>
+      <div class="hero__landing">
+          <div class="right">
+            <img src='./img/landingtwo.webp' alt="" class="landing__image" />
+          </div>
+          <div class="image__container">
+              <div class="top">
+                  <div class="frame">
+                      <div class="slider">
+                          {{#each allShoes}}
+                              <img src="data:text/html;base64,{{image}}" alt="shoe" class="slider-image" />
+                          {{/each}}
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+<script src="./slider.js" type="module"></script>

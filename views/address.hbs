@@ -1,0 +1,31 @@
+<div class="welcome_main_container">
+        <form action="/checkout/address/{{name}}" method="post">
+            <div class="product border">
+                    <p class="message">{{message}}</p>
+                <div class="product-head">
+                    <img src="/img/shippping.webp" alt="" class="header_image" />
+                    <p class="title">Address Details</p>
+                </div>
+                <div class="description_container border">
+                        <div class="name_container">
+                            <div>
+                                <p class="details_label">Street Address</p>
+                                <input class="name_input" name="street" value="" type="text" placeholder=".e.g 14 Peace Street" />
+                            </div>
+                            <div>
+                                <p class="details_label">City/Town</p>
+                                <input class="name_input" name="city" value="" type="text" placeholder=".e.g Cape Town" />
+                            </div>
+                            <div>
+                                <p class="details_label">Postal Code</p>
+                                <input class="name_input" name="code" value="" type="tel" placeholder=".e.g 7100" />
+                            </div>
+                        </div>
+                </div>
+                <button class='confirm_button' type="submit">Next</button>
+        </form>
+    </div>
+</div>
+<div class="welcome_image_container_two">
+    <img src="/img/shipping.png" alt="" class="welcome_image_two" />
+</div>

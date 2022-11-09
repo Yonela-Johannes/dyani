@@ -1,0 +1,32 @@
+<div class="welcome_main_container">
+    <p class="message">{{message}}</p>
+        <p class="title">Welcome Back</p>
+            <div class="welcome">
+                    <form action="/signin" method="post">
+                        <div class="description_container">
+                                <div>
+                                    <div>
+                                        <input name="email" type="email" placeholder="Enter email" />
+                                    </div>
+                                    <div>
+                                        <input name="password" type="password" placeholder="Enter password" />
+                                    </div>
+                                </div>
+                            </div>
+                                <div >
+                            <div class="proceed">
+                                <button type="submit">Sign in</button>
+                            </div>
+                        </div>
+                    </form>
+                <p class="sign">Do not have an account?
+            <a href="/signup">
+                Sign up
+            </a>
+            instead.
+        </p>
+    </div>
+</div>
+<div class="welcome_image_container_two">
+    <img src="/img/logo.jpg" alt="" class="welcome_image_two" />
+</div>

@@ -1,0 +1,78 @@
+<div class="cart">
+    <p class="title">Shopping Cart</p>
+    <table>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Brand
+            </th>
+            <th>
+                Color
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                Add/Rem
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Total Amount
+            </th>
+        </tr>
+
+        {{#each filterCart}}
+        <tr>
+            <div class="inner-cart">
+                <td>
+                    <p>{{name}}</p>
+                </td>
+                <td>
+                    <p>{{brand}}</p>
+                </td>
+                <td>
+                    <p>{{color}}</p>
+                </td>
+                <td>
+                    <p>{{gender}}</p>
+                </td>
+                <td class="qty-btns">
+                    <form action='/add-to-cart/shoe/{{id}}' method="post">
+                        <button class="qty green">+</button>
+                    </form>
+                    <form action="/minus-from-cart/{{id}}" method="post">
+                        <button class="qty red">-</button>
+                    </form>
+                </td>
+                <td>
+                    <p>{{buying_amount}} * R {{amount}}</p>
+                </td>
+                <td>
+                    <p>R {{price}}</p>
+                </td>
+            </div>
+        </tr>
+        {{/each}}
+    </table>
+    <div class="totals">
+        <p>Sub Total</p>
+        <p>R {{total}}</p>
+    </div>
+    <p class="cartMessage {{messageState}}">{{stateMessage}}</p>
+</div>
+<div class="checkout-container">
+    <p class="title">Checkout</p>
+    <div class="totals checkout">
+        <p>Sub Total</p>
+        R {{total}}
+    </div>
+    <div class="button-container">
+        <a href="/checkout">
+            <button class="buy-button buy {{state}}">Checkout</button>
+        </a>
+    </div>
+</div>

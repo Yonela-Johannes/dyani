@@ -1,0 +1,49 @@
+<div class="main-search-container">
+    <div class="product">
+            {{#shoe}}
+             <img class="item-product-image" src="data:text/html;base64,{{image}}" alt="product" />
+        <div class="inner-container">
+            <form action="/add-to-cart-three/shoe/{{id}}" method="post">
+                <p class="title">Shoe Details</p>
+                <div class="">
+                    <div class="description_container">
+                        <div class="price-content">
+                            <p class="brand_title">name</p>
+                            <p class='name'>{{this.name}}</p>
+                        </div>
+                        <div class="price-content">
+                            <p class="brand_title">brand</p>
+                            <p class="brand">{{brand}}</p>
+                        </div>
+                        <div class="price-content">
+                            <p class="brand_title">Gender</p>
+                            <p class="brand">{{gender}}</p>
+                        </div>                        
+                        <div class="price-content">
+                            <p class="brand_title">Color</p>
+                            <p class="brand">{{color}}</p>
+                        </div>
+                        <div class="price-content">
+                            <p class="brand_title">Size</p>
+                            <p class="brand">{{size}}</p>
+                        </div>
+                        <div class="price-content">
+                            <p class="brand_title">In Stock</p>
+                            <p class="brand">{{in_stock}}</p>
+                        </div>
+                        <div class="price-content cost">
+                            <p class="brand_title">Cost</p>
+                            <p class="price"> R{{price}}</p>
+                        </div>
+                        <div class="add-to-cart item">
+                            <button class="cart-button add">
+                                <img src="/img/addToCart.png" alt="" class="welcome_image" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    {{/shoe}}
+</div>

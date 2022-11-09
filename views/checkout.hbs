@@ -1,0 +1,35 @@
+<div class="welcome_main_container">
+    <div class="welcome_container">
+        <img src="/img/infoman.png" alt="" class="welcome_image_main" />
+    </div>
+    <div class="welcome">
+        <p class="message">{{message}}</p>
+        <form action="/api/signup" method="post">
+            <p class="title">Personal Details</p>
+            <div class="welcome_container">
+                <img src="/img/personal.png" alt="" class="welcome_image" />
+            </div>
+            <div class="description_container">
+                <div class="name_container">
+                    <div class="inner_names">
+                        <p class="details_label">Name</p>
+                        <input class="name_input" name="name" value="" type="text" placeholder="Please enter name" />
+                    </div class="inner_names">
+                    <div class="inner_names">
+                        <p class="details_label">Last Name</p>
+                        <input class="name_input" name="lastname" value="" type="text"
+                            placeholder="Please enter last name" />
+                    </div>
+                    <div class="inner_names">
+                        <p class="details_label">Phone Number</p>
+                        <input class="name_input" name="phone" value="" type="tel" placeholder="Please enter you number" />
+                    </div>
+                </div>
+            </div>
+            <button class='confirm_button' type="submit">Next</button>
+    </div>
+    </form>
+    <div class="welcome_image_container_two">
+        <img src="/img/personal.png" alt="" class="welcome_image_two" />
+    </div>
+</div>
