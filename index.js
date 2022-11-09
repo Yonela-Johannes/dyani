@@ -9,9 +9,10 @@ const dotenv = require('dotenv')
 const flash = require('connect-flash')
 const ShoesDb = require('./sql/shoesDb.js')
 const ShoesFe = require('./app.js')
-
 const Routes = require('./routes/routes.js')
 const AdminRoutes = require('./routes/admin-routes.js')
+const Auth = require('./controllers/auth')
+const ShoeApi = require('./api/shoes-api')
 
 const connectionString = process.env.DATABASE_URL || local
 
@@ -28,6 +29,9 @@ const app = express()
 dotenv.config()
 const shoesFe = ShoesFe()
 const shoesDb = ShoesDb(db)
+
+const auth = Auth(shoesDb)
+const shoeApi = ShoeApi(shoesDb)
 
 const routes = Routes(shoesDb, shoesFe)
 const adminRoutes = AdminRoutes(shoesDb, shoesFe)
@@ -79,6 +83,26 @@ app.get('/cart', routes.getCart)
 
 app.post("/shoes/search", routes.search)
 app.post('/logout', routes.logout)
+
+// AUTHENTICATION
+app.post('/api/auth/signup', auth.register)
+app.post('/api/auth/signin', auth.login)
+app.post('/api/auth/signout', auth.logout)
+// ALL SHOES
+app.get('/api/shoes', shoeApi.allShoes)
+// UPLOAD NEW SHOE
+app.post('/api/shoes/add-shoe', shoeApi.addShoe)
+// SHOE BY ID
+app.get('/api/shoe/:id', shoeApi.shoe)
+// SHOE BY NAME
+app.get('/api/shoes/name/:name', shoeApi.getName)
+// SHOE BY BRANDNAME
+app.get('/api/shoes/brand/:brandname', shoeApi.getBrand)
+// SHOE BY  SHOE SIZE
+app.get('/api/shoes/size/:size', shoeApi.getSize)
+// SHOE BY BRANDNAME & SHOE SIZE
+app.get('/api/shoes/brand/:brandname/size/:size', shoeApi.getBrandSize)
+
 const port = process.env.PORT || 8000
 app.listen(port, () => {
     console.log('Your app is running on port: ', port)
