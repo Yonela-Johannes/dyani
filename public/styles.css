@@ -270,7 +270,11 @@ p.search-title{
   display: flex;
   margin-top: 200px;
 }
-
+.product-wrapper{
+  display: flex;
+  width: 1000px;
+  margin-bottom: 50px;
+}
 .product-image{
   height: 160px;
   width: 258px;
