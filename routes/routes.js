@@ -18,7 +18,7 @@ const Routes = (shoesDb, shoesFE ) => {
     const home = async (req, res, next) => {
         cart = shoesFE.getCart()
         let shoes = []
-        await axios.get('https://shoe-catalogue.herokuapp.com/api/shoes')
+        await axios.get('https://dyani.herokuapp.com/api/shoes')
             .then((response) => {
             if(response?.data?.status === 'success'){
                 shoes = response?.data?.shoes
@@ -70,7 +70,7 @@ const Routes = (shoesDb, shoesFE ) => {
     const getShoes = async (req, res, next) => {
             cart = shoesFE.getCart()
             let shoes = []
-            await axios.get('https://shoe-catalogue.herokuapp.com/api/shoes')
+            await axios.get('https://dyani.herokuapp.com/api/shoes')
                 .then((response) => {
                 if(response?.data?.status === 'success'){
                     shoes = response?.data?.shoes
@@ -126,7 +126,7 @@ const Routes = (shoesDb, shoesFE ) => {
     const viewShoe = async (req, res, next) => {
         const {id} = req.params
         let data = await axios
-        .get(`https://shoe-catalogue.shoe-catalogue.herokuapp.com/api/shoe/${id}`)
+        .get(`https://dyani.herokuapp.com/api/shoe/${id}`)
         .then(res => res.data.shoe)
         const shoe = data
         let filterCart = cart?.filter(elem => elem.buying_amount >= 1)
@@ -213,7 +213,7 @@ const Routes = (shoesDb, shoesFE ) => {
                         res.redirect('/signin')
                     }else{ 
                     let data = {"name": name, "lastname": lastname, "email": email, "password": password}
-                        const response = await fetch("https://shoe-catalogue.shoe-catalogue.herokuapp.com/api/auth/signup", {
+                        const response = await fetch("https://dyani.shoe-catalogue.herokuapp.com/api/auth/signup", {
                         method: 'POST',
                         mode: 'cors',
                         cache: 'no-cache',
@@ -274,7 +274,7 @@ const Routes = (shoesDb, shoesFE ) => {
                 let emailPattern = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/
                 if(emailPattern.test(email)){
                     let data = {"email": email,"password": password}
-                    const response = await fetch("https://shoe-catalogue.shoe-catalogue.herokuapp.com/api/auth/signin", {
+                    const response = await fetch("https://dyani.shoe-catalogue.herokuapp.com/api/auth/signin", {
                         method: 'POST',
                         mode: 'cors',
                         cache: 'no-cache',
@@ -345,7 +345,7 @@ const Routes = (shoesDb, shoesFE ) => {
         else if(name && brand && gender && price && in_stock && size && image && color ){
         let imageAsBase64 = fs.readFileSync(`./public/img/${image}`, 'base64');
             let data = {"name": name, "brand": brand, "gender": gender, "price": price, "in_stock": in_stock, "size": size, "image": String(imageAsBase64), "color": color}
-            await fetch("https://shoe-catalogue.herokuapp.com/api/shoes/add-shoe", {
+            await fetch("https://dyani.herokuapp.com/api/shoes/add-shoe", {
               method: 'POST',
               mode: 'cors',
               cache: 'no-cache',
@@ -529,28 +529,28 @@ const Routes = (shoesDb, shoesFE ) => {
         let shoes = []
 
         if(brand){
-            await axios.get(`https://shoe-catalogue.herokuapp.com/api/shoes/brand/${brand}`)
+            await axios.get(`https://dyani.herokuapp.com/api/shoes/brand/${brand}`)
             .then((response) => {
                 if(response?.data?.status === 'success'){
                     shoes = response?.data?.shoes
                 }
         })
         }else if(size){
-            await axios.get(`https://shoe-catalogue.herokuapp.com/api/shoes/size/${size}`)
+            await axios.get(`https://dyani.herokuapp.com/api/shoes/size/${size}`)
             .then((response) => {
                 if(response?.data?.status === 'success'){
                     shoes = response?.data?.shoes
                 }
             })
         }else if(brand && size){
-            await axios.get(`https://shoe-catalogue.herokuapp.com/api/shoes/brand/${brand}/size/${size}`)
+            await axios.get(`https://dyani.herokuapp.com/api/shoes/brand/${brand}/size/${size}`)
             .then((response) => {
                 if(response?.data?.status === 'success'){
                     shoes = response?.data?.shoes
                 }
             })
         }else{
-            await axios.get('https://shoe-catalogue.herokuapp.com/api/shoes')
+            await axios.get('https://dyani.herokuapp.com/api/shoes')
                 .then((response) => {
                 if(response?.data?.status === 'success'){
                     shoes = response?.data?.shoes
@@ -606,7 +606,7 @@ const Routes = (shoesDb, shoesFE ) => {
     }
 
     const logout = async (req, res) => {
-       const response = await fetch("https://shoe-catalogue.herokuapp.com/api/auth/signout", {
+       const response = await fetch("https://dyani.herokuapp.com/api/auth/signout", {
             method: 'POST',
             mode: 'cors',
             cache: 'no-cache',
