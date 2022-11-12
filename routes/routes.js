@@ -527,7 +527,8 @@ const Routes = (shoesDb, shoesFE ) => {
         const {brand, size} = req.body
         cart = shoesFE.getCart()
         let shoes = []
-
+        let getAllShoes;
+        let displayMessage;
         if(brand){
             await axios.get(`https://dyani.herokuapp.com/api/shoes/brand/${brand}`)
             .then((response) => {
@@ -550,14 +551,14 @@ const Routes = (shoesDb, shoesFE ) => {
                 }
             })
         }else{
-            await axios.get('https://dyani.herokuapp.com/api/shoes')
-                .then((response) => {
-                if(response?.data?.status === 'success'){
-                    shoes = response?.data?.shoes
-                }
-            })
+            displayMessage = 'Enter Search fields.'
         }
-        const displayMessage = 'Sorry, There is no Shoes in Shop'
+        await axios.get('https://dyani.herokuapp.com/api/shoes')
+        .then((response) => {
+            if(response?.data?.status === 'success'){
+                getAllShoes = response?.data?.shoes
+            }
+        })
         const success = req.flash()
         userCred = req.session.client ? req.session.client?.name : 'Sign in'
         if(req.session.client){
@@ -574,11 +575,11 @@ const Routes = (shoesDb, shoesFE ) => {
         let filterCart = cart?.filter(elem => elem.buying_amount >= 1)
         cartTotal = filterCart.length
         userCred = req.session.client ? req.session.client?.name : 'Sign in'
-        const shoeBrands = shoes?.map(brand => brand.brand)
-        const shoeSizes = shoes?.map(brand => brand.size)
+        const shoeBrands = getAllShoes?.map(brand => brand.brand)
+        const shoeSizes = getAllShoes?.map(brand => brand.size)
         const brands = [...new Set(shoeBrands)]
         const sizes = [...new Set(shoeSizes)]
-        res.render('search', {
+        res.render('home', {
             brands,
             sizes,
             userCredState,
